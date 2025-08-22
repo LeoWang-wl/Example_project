@@ -3,7 +3,9 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', 
+  base: process.env.NODE_ENV === 'production' 
+    ? '/Example_project/' 
+    : './', 
   plugins: [vue()],
   build: {
     outDir: 'dist', // 输出目录
